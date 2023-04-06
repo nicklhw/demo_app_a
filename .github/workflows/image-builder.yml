@@ -11,7 +11,7 @@ jobs:
     runs-on: self-hosted
     env:
       ENVIRONMENT: dev
-    environment: ${{ env.ENVIRONMENT }}
+    environment: dev
     permissions:
       contents: read
       id-token: write
@@ -34,7 +34,7 @@ jobs:
     runs-on: self-hosted
     env:
       ENVIRONMENT: test
-    environment: ${{ env.ENVIRONMENT }}
+    environment: test
     needs: deploy-to-dev
     permissions:
       contents: read
@@ -59,7 +59,7 @@ jobs:
     needs: deploy-to-test
     env:
       ENVIRONMENT: prod
-    environment: ${{ env.ENVIRONMENT }}
+    environment: prod
     permissions:
       contents: read
       id-token: write
