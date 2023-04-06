@@ -25,7 +25,7 @@ jobs:
           tlsSkipVerify: true
           role: demo_app
           secrets: |
-            secret/data/${{ github.event.repository.name }}/${{ env.ENVIRONMENT }} app_secret
+            secret/data/${{ github.repository }}/${{ env.ENVIRONMENT }} app_secret
       - name: Build Docker Image
         run: docker build . --file Dockerfile --build-arg app_secret="${{ env.APP_SECRET }}" -t vault-action-exampleapp
       
@@ -49,7 +49,7 @@ jobs:
           tlsSkipVerify: true
           role: demo_app
           secrets: |
-            secret/data/${{ github.event.repository.name }}/${{ env.ENVIRONMENT }} app_secret
+            secret/data/${{ github.repository }}/${{ env.ENVIRONMENT }} app_secret
       - name: Build Docker Image
         run: docker build . --file Dockerfile --build-arg app_secret="${{ env.APP_SECRET }}" -t vault-action-exampleapp
         
@@ -73,6 +73,6 @@ jobs:
           tlsSkipVerify: true
           role: demo_app
           secrets: |
-            secret/data/${{ github.event.repository.name }}/${{ env.ENVIRONMENT }} app_secret
+            secret/data/${{ github.repository }}/${{ env.ENVIRONMENT }} app_secret
       - name: Build Docker Image
         run: docker build . --file Dockerfile --build-arg app_secret="${{ env.APP_SECRET }}" -t vault-action-exampleapp
