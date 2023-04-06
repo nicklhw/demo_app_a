@@ -23,7 +23,7 @@ jobs:
           method: jwt
           url: http://127.0.0.1:8200
           tlsSkipVerify: true
-          role: ${{ github.event.repository.name }}_${{ env.ENVIRONMENT }}
+          role: demo_app
           secrets: |
             secret/data/${{ github.event.repository.name }}/${{ env.ENVIRONMENT }} app_secret
       - name: Build Docker Image
@@ -47,7 +47,7 @@ jobs:
           method: jwt
           url: http://127.0.0.1:8200
           tlsSkipVerify: true
-          role: ${{ github.event.repository.name }}_${{ env.ENVIRONMENT }}
+          role: demo_app
           secrets: |
             secret/data/${{ github.event.repository.name }}/${{ env.ENVIRONMENT }} app_secret
       - name: Build Docker Image
@@ -71,7 +71,7 @@ jobs:
           method: jwt
           url: http://127.0.0.1:8200
           tlsSkipVerify: true
-          role: ${{ github.event.repository.name }}_${{ env.ENVIRONMENT }}
+          role: demo_app
           secrets: |
             secret/data/${{ github.event.repository.name }}/${{ env.ENVIRONMENT }} app_secret
       - name: Build Docker Image
